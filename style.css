@@ -1,0 +1,62 @@
+/*-----Switch Box Container------*/
+.switch__container{
+	height: 90vh;
+	width: 90vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: lightgrey;
+	letter-spacing: 0.2rem;
+}
+
+/*-----Switch Box------*/
+
+.switch__box{
+	width: 70px;
+	height: 34px;
+	position: relative;
+	display: inline-block;
+}
+
+/*-----Hiding Checkbox------*/
+
+.switch__box input{
+	display: none;
+}
+
+
+.button{
+	position: absolute;
+	/*---To make height and width of button 100%--*/
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-color: red;
+	cursor: pointer;
+	transition: .4s;
+	border-radius: 34px;
+}
+
+.button:before{
+	position: absolute;
+	content: '';
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	transition: 0.4s;
+	border-radius: 50%;
+}
+
+input:checked + .button{
+	background-color: #30F34B;
+}
+
+input:checked + .button:before{
+	/*Translation distance is calculate using 
+	distance =  width of switch box[i.e 70px] - diameter of button[i.e 26px]*/
+	transform: translateX(36px);
+}
+
